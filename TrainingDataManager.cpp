@@ -1,8 +1,8 @@
 /*
  *TrainingDataManager.cpp
-
+ *desc       训练集管理器
  *@author    chencheng
- *@email     chencheng1022@gmail.com
+ *@email     cc@iamcc.me
  *@date:     2013-05-30
  */
 
@@ -15,6 +15,9 @@ namespace fs = boost::filesystem;
 
 std::string TrainingDataManager::defaultPath("./TrainingSet/");
 
+/*
+ *@desc   初始化训练集管理器
+ */
 TrainingDataManager::TrainingDataManager()
 {
     traingTextDir = defaultPath;
@@ -72,6 +75,9 @@ VS TrainingDataManager::getFilePath(std::string classification)
 
 }
 
+/*
+ *@desc 读取filePath下的文本内容
+ */
 std::string TrainingDataManager::getText(std::string filePath)
 {
     std::string text, line;
@@ -88,6 +94,9 @@ std::string TrainingDataManager::getText(std::string filePath)
     return text;
 }
 
+/*
+ *@desc  获取训练集文件的数目
+ */
 int TrainingDataManager::getTrainingFileCount(void)
 {
     VSiter iter;
@@ -100,11 +109,18 @@ int TrainingDataManager::getTrainingFileCount(void)
     return count;
 }
 
+/*
+ *@desc  获取某个分类训练集文件的数目
+*/
+
 int TrainingDataManager::getTrainingFileCountOfClassification(std::string classification)
 {
     return getFilePath(classification).size();
 
 }
+/*
+ *@desc 获取某个分类中出现key的问本的数目
+ */
 
 int TrainingDataManager::getCountContainKeyOfClassification(std::string classification, std::string key)
 {

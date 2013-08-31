@@ -1,15 +1,20 @@
 /*
  *ChineseSpliter.cpp
-
+ *@desc    中文分词器，采用friso分词库
  *@author    chencheng
- *@email     chencheng1022@gmail.com
+ *@email     cc@iamcc.me
  */
 
 #include "ChineseSpliter.h"
 #include <vector>
 
+
 std::string StopWordHandler::stopWordList[] = {"的", "我们","要","自己","之","将","“","”","，","（","）","后","应","到","某","后","个","是","位","新","一","两","在","中","或","有","更","好",""};
 //常用停用词
+
+/*
+@desc 判断一个词是否是停用词
+*/
 bool StopWordHandler::IsStopWord(std::string word)
 {
     std::cout << stopWordNum << std::endl;
@@ -21,6 +26,9 @@ bool StopWordHandler::IsStopWord(std::string word)
     return false;
 }
 
+/*
+@desc 用文件path初始化分词器
+*/
 ChineseSpliter::ChineseSpliter(const std::string _path_)
 {
     path = const_cast<char*>(_path_.c_str());
@@ -34,6 +42,9 @@ ChineseSpliter::~ChineseSpliter(void)
 
 }
 
+/*
+@desc 对文本进行分词，储存在vector中
+*/
 void ChineseSpliter::split(const std::string text, VS& result)
 {
 
@@ -52,7 +63,6 @@ void ChineseSpliter::split(const std::string text, VS& result)
 }
 
 //用于测试的主函数
-/*
 int main(int argc, char* argv[])
 {
     std::string text = "我是一个中国人";
@@ -71,4 +81,3 @@ int main(int argc, char* argv[])
     std::cout << "我们:" << StopWordHandler::IsStopWord("我们") << std::endl;
     return 0;
 }
-*/

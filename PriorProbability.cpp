@@ -1,8 +1,8 @@
 /*
  *PriorProbability.cpp
-
+ *@desc      计算先验概率
  *@author    chencheng
- *@email     chencheng1022@gmail.com
+ *@email     cc@iamcc.me
  *@date:     2013-05-31
  */
 

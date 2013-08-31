@@ -1,8 +1,8 @@
 /*
  *BayesClassifier.cpp
- * 朴素贝叶斯分类器
+ *@desc      朴素贝叶斯分类器
  *@author    chencheng
- *@email     chencheng1022@gmail.com
+ *@email     cc@iamcc.me
  *@time      2013-06-06
  */
 
