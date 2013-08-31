@@ -1,6 +1,6 @@
 /*
  *ClassConditionalProbability.cpp 
-
+ *desc       计算分类条件概率
  *@author    chencheng
  *@email     chencheng1022@gmail.com
  *@date:     2013-05-31
@@ -19,6 +19,7 @@ float ClassConditionalProbability::calculatePxc(std::string x, std::string c)
     float Nc = tmd->getTrainingFileCountOfClassification(c);
     float V = tmd->getTrainingClassifications().size();
 
+    //P(B∣A)=P(AB)/P(A)  为在条件A下发生的条件事件B发生的条件概率
     ret = (Nxc + 1) / (Nc + M + V);
             
     return ret;                    
